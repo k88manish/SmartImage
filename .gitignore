@@ -1,0 +1,16 @@
+venv/
+
+*.pyc
+__pycache__/
+
+Video-Analayser/instance/
+
+.pytest_cache/
+.coverage
+Video-Analayser/htmlcov/
+
+dist/
+build/
+*.egg-info/
+
+.vscode
