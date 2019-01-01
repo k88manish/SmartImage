@@ -1,6 +1,7 @@
 # Program To Read video
 # and Extract Frames
 import cv2
+import math
 
 from . import image_stitching_core
 
@@ -26,20 +27,21 @@ def FrameCapture(path):
     success = 1
 
     images_paths = []
+    frameRate = vidObj.get(5) #frame rate
 
-    while success:
-        vidObj.set(cv2.CAP_PROP_POS_MSEC, (count*1000))
-        # vidObj object calls read
-        # function extract frames
-        success, image = vidObj.read()
+    while(vidObj.isOpened()):
+        frameId = vidObj.get(1) #current frame number
+        success, frame = vidObj.read()
+        if (success != True):
+            break
+        if (frameId % math.floor(frameRate) == 0):
+            # Create new file name
+            file_path = ".\\Frames\\frame%d.jpg" % count
 
-        # Create new file name
-        file_path = ".\\Frames\\frame%d.jpg" % count
+            # Saves the frames with frame-count
+            cv2.imwrite(file_path, frame,)
 
-        # Saves the frames with frame-count
-        cv2.imwrite(file_path, image,)
-
-        images_paths.append(file_path)
+            images_paths.append(file_path)
 
         count += 1
 
