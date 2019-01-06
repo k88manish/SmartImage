@@ -108,4 +108,4 @@ def Stitch(args):
         cv2.destroyAllWindows()
     if args.save:
         logger.info("saving stitched image to {0}".format(args.save_path))
-        image_stitching.helpers.save_image(args.save_path, result)
+        image_stitching.helpers.save_image(os.path.join('flaskr/static', args.save_path), result)

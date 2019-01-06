@@ -8,6 +8,9 @@ Video-Analayser/instance/
 .pytest_cache/
 .coverage
 Video-Analayser/htmlcov/
+Video-Analayser/flaskr/static
+Video-Analayser/Frames/*
+
 
 dist/
 build/
