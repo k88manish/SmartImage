@@ -121,7 +121,7 @@ object-detection==0.1
 odo==0.5.1
 olefile==0.46
 opencv-contrib-python==3.3.0.10
-opencv-python==3.4.3.18
+opencv-python==3.4.7.28
 openpyxl==2.5.9
 packaging==18.0
 pandas==0.23.4
